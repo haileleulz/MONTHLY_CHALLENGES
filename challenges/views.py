@@ -1,35 +1,44 @@
+from calendar import month
+
 from django.shortcuts import render
-from django.http import HttpRequest, HttpResponse, HttpResponseNotFound
+from django.http import (
+    HttpRequest,
+    HttpResponse,
+    HttpResponseNotFound,
+    HttpResponseRedirect,
+)
+
+monthly_challenges = {
+    "january": "Hello, world. January challenges.",
+    "february": "Hello, world.February Challenge.",
+    "march": "Hello, world.March Challenge.",
+    "april": "Hello, world.April Challenge.",
+    "may": "Hello, world.May Challenge.",
+    "june": "Hello, world.June Challenge.",
+    "july": "Hello, world.July Challenge.",
+    "august": "Hello, world.August Challenge.",
+    "september": "Hello, world.September Challenge.",
+    "october": "Hello, world.October Challenge.",
+    "november": "Hello, world.November Challenge.",
+    "december": "Hello, world.December Challenge.",
+}
 
 # Create your views here.
 
 
-def monthly_challenge(request, month):
-    challenge_text = None
-    if month == "january":
-        challenge_text = "Hello, world. January challenges."
-    elif month == "february":
-        challenge_text = "Hello, world.February Challenge."
-    elif month == "march":
-        challenge_text = "Hello, world.March Challenge."
-    elif month == "april":
-        challenge_text = "Hello, world.April Challenge."
-    elif month == "may":
-        challenge_text = "Hello, world.May Challenge."
-    elif month == "june":
-        challenge_text = "Hello, world.June Challenge."
-    elif month == "july":
-        challenge_text = "Hello, world.July Challenge."
-    elif month == "august":
-        challenge_text = "Hello, world.August Challenge."
-    elif month == "september":
-        challenge_text = "Hello, world.September Challenge."
-    elif month == "october":
-        challenge_text = "Hello, world.October Challenge."
-    elif month == "november":
-        challenge_text = "Hello, world.November Challenge."
-    elif month == "december":
-        challenge_text = "Hello, world.December Challenge."
-    else:
+def monthly_challenge_by_number(request, month):
+    months = list(monthly_challenges.keys())
+
+    if month > len(months):
         return HttpResponseNotFound("This month is not supported.")
-    return HttpResponse(challenge_text)
+
+    forward_month = months[month - 1]
+    return HttpResponseRedirect("/challenges/" + forward_month)
+
+
+def monthly_challenge(request, month):
+    try:
+        challenge_text = monthly_challenges[month]
+        return HttpResponse(challenge_text)
+    except KeyError:
+        return HttpResponseNotFound("This month is not supported.")
