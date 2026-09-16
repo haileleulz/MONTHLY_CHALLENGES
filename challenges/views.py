@@ -20,6 +20,7 @@ monthly_challenges = {
 
 # Create your views here.
 
+
 def index(request):
     list_items = ""
     months = list(monthly_challenges.keys())
@@ -31,6 +32,7 @@ def index(request):
 
     response_data = f"<ul><h2>{list_items}</h2></ul>"
     return HttpResponse(response_data)
+
 
 def monthly_challenge_by_number(request, month):
     months = list(monthly_challenges.keys())
@@ -46,20 +48,9 @@ def monthly_challenge_by_number(request, month):
 def monthly_challenge(request, month):
     try:
         challenge_text = monthly_challenges[month]
-        response_data = f"<h1>{challenge_text}</h1>"
-        return HttpResponse(response_data)
-    except KeyError:
+        return render(request, "challenges/challenge.html", {
+            'text': challenge_text,
+            'month_name': month 
+        })
+    except:
         return HttpResponseNotFound("<h1>This month is not supported.</h1>")
-    # except KeyError:
-    #     return HttpResponse("<h1>This month is not supported.</h1>", status=404)
-    # except KeyError:
-    #     response = HttpResponseNotFound("<h1>This month is not supported.</h1>")
-    #     print(response.status_code)
-    #     print(response["Content-Type"])
-    #     return response
-
-# except KeyError:
-#     response = HttpResponseNotFound("<h1>This month is not supported.</h1>")
-#     print(response.status_code)
-#     print(response["Content-Type"])
-#     return response
