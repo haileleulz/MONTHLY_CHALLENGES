@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block title %}
-  My Blog
+  My Conquest
 {% endblock %}
 
 {% block css_files %}
@@ -19,8 +19,8 @@
 
   <section id="welcome">
     <header id="main-navigation">
-      <img src="" alt="haile - The Author of this blog" />
-      <h2 class="hero-title">Z_Conqueror</h2>
+      <img src="{% static 'blog/images/general.png' %}" alt="haile - The Author of this blog" />
+      <h2>Z_Conqueror</h2>
     </header>
     <p>I will conquer the whole world and unlock the mysteries of the universe.</p>
   </section>
@@ -31,17 +31,17 @@
       <li>
         <article class="post">
           <a href="">
-            <img src="" alt="Battle XXI" />
+            <img src="{% static 'blog/images/colosseum.png' %}" alt="Battle XXI" />
             <div class="post__content">
               <h3>Battle XXI</h3>
-              <p>No one can save you! I will end the suffering and give you a quick death. You will never know what hit you. A new world I will create under my command. My reign will forever be cherished!</p>
+              <p>No one can save you! I will end the suffering and give you a quick death. You will never know what hit you. A new world I will create under my command. <strong>My reign will forever be cherished!</strong></p>
             </div>
           </a>
         </article>
       </li>
     </ul>
   </section>
-  <section>
+  <section id="about">
     <h2>What i will Do</h2>
     <p>I will remove dictatorship and install my MONARCHY no more elecction no more war !!!</p>
     <p>I will make the best of the resources available. No more capitalism. No more Racism. No more genocide no one judged based on complexion preference and opinions.</p>

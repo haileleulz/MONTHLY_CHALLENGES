@@ -42,6 +42,10 @@
   box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.4);
 }
 
+#latest-posts h3 {
+  text-align: center;
+}
+
 #latest-posts h2 {
   text-align: center;
 }
@@ -56,10 +60,12 @@
 
 #latest-posts li {
   flex: 1;
+  text-align: center;
 }
 
 #about {
   text-align: center;
+  text-align: left;
   padding: 3rem;
   background-color: #e48900;
   margin-top: 5rem;
@@ -73,8 +79,3 @@
   font-size: 1.5rem;
   color: #353535;
 }
-
-/* .hero-title {
-  font-size: 2.5rem;
-  color: #353535;
-} */
