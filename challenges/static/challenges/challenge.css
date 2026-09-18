@@ -1,0 +1,24 @@
+h1,
+h2 {
+  font-weight: bold;
+  text-align: center;
+  color: #2fea25;
+}
+
+
+h1 {
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem 0;
+  font-weight: normal;
+  color: #7e0f0f;
+}
+
+h2 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.no-challenge {
+  text-align: center;
+  color: #197fe5;
+}

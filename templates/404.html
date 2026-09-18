@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block page_title %}
+  Page Not Found
+{% endblock %}
+
+{% block content %}
+
+  <h1>404 - Page Not Found for the items you are rendering</h1>
+  <p>The page you are looking for does not exist.</p>
+  {% comment %} <a href="{% url 'home' %}">Return to Home</a> {% endcomment %}
+{% endblock %}
