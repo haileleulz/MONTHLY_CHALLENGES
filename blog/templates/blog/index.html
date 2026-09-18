@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+  My Blog
+{% endblock %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static 'blog/index.css' %}" />
+{% endblock %}
+
+{% block content %}
+  <header id="main-navigation">
+    <h1><a href="">Z' Conquerors Blog</a></h1>
+    <nav>
+      <a href="">Conquests</a>
+    </nav>
+  </header>
+
+  <section id="welcome">
+    <header id="main-navigation">
+      <img src="" alt="haile - The Author of this blog" />
+      <h2 class="hero-title">Z_Conqueror</h2>
+    </header>
+    <p>I will conquer the whole world and unlock the mysteries of the universe.</p>
+  </section>
+
+  <section id="latest-posts">
+    <h2>MY Conquered Areas</h2>
+    <ul>
+      <li>
+        <article class="post">
+          <a href="">
+            <img src="" alt="Battle XXI" />
+            <div class="post__content">
+              <h3>Battle XXI</h3>
+              <p>No one can save you! I will end the suffering and give you a quick death. You will never know what hit you. A new world I will create under my command. My reign will forever be cherished!</p>
+            </div>
+          </a>
+        </article>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h2>What i will Do</h2>
+    <p>I will remove dictatorship and install my MONARCHY no more elecction no more war !!!</p>
+    <p>I will make the best of the resources available. No more capitalism. No more Racism. No more genocide no one judged based on complexion preference and opinions.</p>
+  </section>
+{% endblock %}
